@@ -1,16 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: {
-    unoptimized: true
+  // Disable build traces to fix the stack size error
+  experimental: {
+    webpackBuildWorker: false,
   },
+  // Skip type checking during build
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  // Skip ESLint during build
   eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  }
+  // Disable source maps to reduce memory usage
+  productionBrowserSourceMaps: false,
 }
 
-module.exports = nextConfig;
+module.exports = nextConfig
