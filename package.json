@@ -1,7 +1,8 @@
 {
-  "name": "dr-rajni-tiwari",
+  "name": "dr-rajni-tiwari-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,15 +11,19 @@
   },
   "dependencies": {
     "next": "14.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "lucide-react": "^0.294.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "lucide-react": "^0.294.0",
+    "@emailjs/browser": "^3.11.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
-    "eslint-config-next": "14.0.0"
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   },
   "engines": {
     "node": ">=18"
   }
-}
+}git status
