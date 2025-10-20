@@ -14,11 +14,29 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleBookAppointment = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleNavigation = (href) => {
+    if (href.startsWith('#')) {
+      const section = document.getElementById(href.substring(1));
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -28,7 +46,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => handleNavigation('#home')}>
             <div className="bg-blue-600 p-2 rounded-lg">
               <Stethoscope className="h-6 w-6 text-white" />
             </div>
@@ -41,20 +59,20 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavigation(item.href)}
                 className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <a
-              href="/appointment"
+            <button
+              onClick={handleBookAppointment}
               className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 font-medium transition-all duration-200"
             >
               Book Appointment
-            </a>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -72,22 +90,20 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 py-4 space-y-4">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block px-4 py-2 text-gray-700 hover:text-blue-600 font-medium"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => handleNavigation(item.href)}
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 font-medium"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <a
-              href="/appointment"
-              className="block mx-4 bg-blue-600 text-white px-6 py-2.5 rounded-lg text-center font-medium"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={handleBookAppointment}
+              className="block w-full mx-4 bg-blue-600 text-white px-6 py-2.5 rounded-lg text-center font-medium"
             >
               Book Appointment
-            </a>
+            </button>
           </div>
         )}
       </div>
