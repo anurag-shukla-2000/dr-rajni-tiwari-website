@@ -1,4 +1,3 @@
-cat > pages/index.js << 'EOL'
 import Navbar from '../components/Layout/Navbar'
 import Hero from '../components/Sections/Hero'
 import About from '../components/Sections/About'
@@ -18,4 +17,3 @@ export default function Home() {
     </main>
   )
 }
-EOL

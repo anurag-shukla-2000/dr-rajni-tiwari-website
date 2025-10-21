@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="min-h-screen flex items-center">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Content */}
-            <div className={`space-y-8 animate-fade-in-up ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`space-y-8 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
               <div className="space-y-4">
                 <div className="glass-effect inline-flex items-center px-4 py-2 rounded-full text-sm mb-4">
                   <Award className="h-4 w-4 mr-2" />
@@ -77,17 +77,15 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Image/Profile Card */}
-<div className={`relative animate-fade-in-up ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-  <div className="professional-card rounded-3xl p-8 shadow-2xl max-w-md mx-auto">
-    <div className="aspect-square bg-gray-200 rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
-      <Image 
-        src="/public/images/dr-rajeni-tiwari.jpg" 
-        alt="Dr. Rajni Tiwari - Gastroenterologist"
-        width={400}
-        height={400}
-        className="w-full h-full object-cover"
-        priority
+            {/* Image/Profile Card - WITH ACTUAL IMAGE */}
+<div className={`relative ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
+  <div className="professional-card rounded-3xl p-8 shadow-2xl max-w-md mx-auto hover-lift">
+    <div className="aspect-square bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 rounded-2xl flex items-center justify-center mb-6 overflow-hidden">
+      {/* REPLACE THIS DIV WITH ACTUAL IMAGE */}
+      <img 
+        src="/images/dr-rajeni-tiwari.jpg" 
+        alt="Dr. Rajni Tiwari"
+        className="w-full h-full object-cover rounded-2xl"
       />
     </div>
     <div className="space-y-4 text-center">
