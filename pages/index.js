@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <Head>
         <title>Dr. Rajni Tiwari | Expert Medical Care & Consultation</title>
+        <meta name="google-site-verification" content="Zm_6cJaVkYSNpwhxVempOFWaA02lXOaADguKwSi7DNo" />
         <meta name="description" content="Dr. Rajni Tiwari offers expert medical care, personalized treatment, and compassionate healthcare services. Book an appointment today for a consultation." />
         <meta name="keywords" content="Dr. Rajni Tiwari, Rajni Tiwari, doctor, medical care, healthcare, consultation, expert doctor, patient care" />
         <meta name="author" content="Dr. Rajni Tiwari" />
