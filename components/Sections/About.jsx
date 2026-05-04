@@ -15,7 +15,7 @@ export default function About() {
     { icon: GraduationCap, text: "University Honors Graduate with Four Gold Medals" },
     { icon: Heart, text: "Patient-Centered Care Philosophy" },
     { icon: Users, text: "Medical Educator & Junior Doctor Mentor" },
-    { icon: Languages, text: "Fluent in Hindi and Urdu" }
+    { icon: Languages, text: "Fluent in English and Hindi" }
   ];
 
   const expertise = [
