@@ -10,130 +10,97 @@ export default function Hero() {
   }, []);
 
   const stats = [
-    { icon: Users, label: 'Patients Treated', value: '5000+', color: 'from-blue-400 to-blue-200' },
-    { icon: Award, label: 'Years Experience', value: '15+', color: 'from-indigo-400 to-indigo-200' },
-    { icon: Clock, label: 'Quick Response', value: '24/7', color: 'from-purple-400 to-purple-200' },
+    { icon: Users, label: 'Patients Treated', value: '5000+' },
+    { icon: Award, label: 'Years Experience', value: '15+' },
+    { icon: Clock, label: 'Quick Response', value: '24/7' },
   ];
 
   return (
-    <section className="min-h-screen medical-gradient text-white relative overflow-hidden">
-      {/* Background Pattern - More subtle */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
-
-      {/* Decorative circles */}
-      <div className="absolute top-20 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
-
-      <div className="container-custom relative z-10">
-        <div className="min-h-screen flex items-center py-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
-            {/* Left Content */}
-            <div className={`space-y-8 ${isVisible ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm border border-white/20">
-                <Shield className="h-4 w-4" />
-                <span>Leading Gastroenterologist in Sydney</span>
-              </div>
-
-              {/* Headings */}
-              <div className="space-y-4">
-                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  Dr. Rajni{' '}
-                  <span className="bg-gradient-to-r from-blue-200 via-white to-purple-200 bg-clip-text text-transparent">
-                    Tiwari
-                  </span>
-                </h1>
-                <h2 className="text-xl lg:text-2xl text-blue-100 font-medium">
-                  MBBS, FRACP — Gastroenterologist & Hepatologist
-                </h2>
-                <p className="text-lg text-blue-100 leading-relaxed max-w-xl">
-                  Specialist in Gastroenterology and Hepatology at Westmead Private Hospital. 
-                  Providing expert care with compassion and cutting-edge medical expertise.
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="/appointment"
-                  className="group bg-white text-blue-600 px-8 py-3.5 rounded-xl font-semibold hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center gap-2"
-                >
-                  Book Consultation
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-                  href="/about"
-                  className="border-2 border-white text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 inline-flex items-center justify-center"
-                >
-                  Learn More
-                </a>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center group">
-                    <div className={`bg-gradient-to-br ${stat.color} p-3 rounded-2xl inline-block mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                      <stat.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold">{stat.value}</div>
-                    <div className="text-blue-200 text-sm">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Trust indicators */}
-              <div className="flex items-center gap-4 pt-4">
-                <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                </div>
-                <span className="text-blue-100 text-sm">Trusted by thousands of patients</span>
-              </div>
+    <section className="min-h-screen bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          
+          {/* LEFT SIDE - Content */}
+          <div className={`space-y-7 ${isVisible ? 'opacity-100 translate-y-0 transition-all duration-700' : 'opacity-0 translate-y-8'}`}>
+            {/* Badge - perfectly centered left */}
+            <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm border border-white/20">
+              <Shield className="h-3.5 w-3.5" />
+              <span>Leading Gastroenterologist in Sydney</span>
             </div>
 
-            {/* Right Content - Profile Card */}
-            <div className={`relative ${isVisible ? 'animate-fade-in-up opacity-100 animation-delay-200' : 'opacity-0'}`}>
-              <div className="relative">
-                {/* Decorative ring */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl blur-xl opacity-30"></div>
-                
-                {/* Main Card */}
-                <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-white/20">
-                  {/* Image Container */}
-                  <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-blue-500 to-indigo-600">
-                    <img 
-                      src="/images/dr-rajeni-tiwari.jpg" 
-                      alt="Dr. Rajni Tiwari"
-                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                  </div>
-                  
-                  <div className="text-center space-y-3">
-                    <h3 className="text-2xl font-bold text-white">Dr. Rajni Tiwari</h3>
-                    <p className="text-blue-100 text-sm">
-                      MBBS, FRACP — Fellow in Gastroenterology
-                    </p>
-                    <div className="flex items-center justify-center gap-2 text-sm text-blue-200">
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <span>Available for consultations</span>
-                      </div>
-                    </div>
-                    <div className="pt-4">
-                      <div className="text-sm text-blue-200">Practicing at</div>
-                      <div className="font-semibold text-white">Westmead Private Hospital</div>
-                    </div>
-                  </div>
+            {/* Headings - clean hierarchy */}
+            <div className="space-y-3">
+              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">
+                Dr. Rajni Tiwari
+              </h1>
+              <p className="text-xl text-blue-100 font-medium">
+                MBBS, FRACP — Gastroenterologist & Hepatologist
+              </p>
+              <p className="text-blue-100 leading-relaxed max-w-md">
+                Specialist at Westmead Private Hospital providing expert, compassionate care.
+              </p>
+            </div>
+
+            {/* Buttons - equal width, same height */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/appointment"
+                className="bg-white text-blue-700 px-8 py-3.5 rounded-xl font-semibold text-center hover:bg-gray-100 transition-all"
+              >
+                Book Consultation →
+              </a>
+              <a
+                href="/about"
+                className="border-2 border-white text-white px-8 py-3.5 rounded-xl font-semibold text-center hover:bg-white hover:text-blue-700 transition-all"
+              >
+                Learn More
+              </a>
+            </div>
+
+            {/* Stats - perfectly spaced grid */}
+            <div className="grid grid-cols-3 gap-8 pt-5 border-t border-white/20 max-w-md">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <stat.icon className="h-6 w-6 mx-auto mb-2 opacity-80" />
+                  <div className="text-2xl font-bold">{stat.value}</div>
+                  <div className="text-blue-100 text-sm">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Stars - perfectly aligned */}
+            <div className="flex items-center gap-3 text-sm text-blue-100 pt-2">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span>Trusted by thousands</span>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE - Profile Card - perfectly centered */}
+          <div className={`flex justify-center ${isVisible ? 'opacity-100 translate-y-0 transition-all duration-700 delay-200' : 'opacity-0 translate-y-8'}`}>
+            <div className="w-96">
+              {/* Image Container - exact square */}
+              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-600 shadow-2xl">
+                <img 
+                  src="/images/dr-rajeni-tiwari.jpg" 
+                  alt="Dr. Rajni Tiwari"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              
+              {/* Info below image - perfectly aligned */}
+              <div className="text-center mt-6 space-y-2">
+                <h3 className="text-xl font-semibold">Dr. Rajni Tiwari</h3>
+                <p className="text-blue-100 text-sm">MBBS, FRACP — Fellow in Gastroenterology</p>
+                <div className="flex items-center justify-center gap-2 text-sm">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span className="text-blue-100">Available</span>
+                </div>
+                <div className="pt-3 text-xs text-blue-100">
+                  Practicing at <span className="text-white font-medium">Westmead Private Hospital</span>
                 </div>
               </div>
             </div>
